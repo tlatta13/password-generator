@@ -1,5 +1,11 @@
 
-passwordText.value = password;   
+document.getElementById("generateBtn").addEventListener("click", writePassword);
+
+function displayPassword() {
+  document.getElementById("password").innerHTML = Password();
+}
+
+
 var generateBtn = document.querySelector("#generate");
 var allowSpecial = confirm("Allow special characters?");
 var allowUpper = confirm("Allow uppercase letters?");
@@ -50,13 +56,13 @@ for (var i=0; i < passChar; i++) {
 }
 
 console.log(password);
-return password
+// return password
 
 
 function writePassword() {
-var password = generatePassword();
-var passwordText = document.querySelector("#password");
-document.getElementById("generateBtn").addEventListener("click", writePassword);
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  document.getElementById("generateBtn").addEventListener("click", writePassword);
 }
 
-
+// passwordText.value = password; 
