@@ -74,7 +74,10 @@ function generatePassword (){
       choices.push (numbers)
   }
 
-
+  // if (choices[i] = [i] - 1) {
+  //   alert("Please select at least 1 character input.")
+  //   passChar = parseInt(prompt("How long would you like your password to be?"));
+  // }
 
    // New password array
   var password = "";
