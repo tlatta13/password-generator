@@ -9,42 +9,38 @@ function writePassword() {
   passwordText.value = password;
 }
 
-// Function to generate the randam password
+// Function to generate the random password
 function generatePassword (){
   
   var generateBtn = document.querySelector("#generate");
   
 
-  // Password length prompt 
-var passChar = parseInt(prompt("How long would you like your password to be?"));   
-while (passChar < 8 || passChar > 128 || passChar === NaN) {    
-if (passChar < 8) {
-      alert("Password must be least 8 characters long");
-      passChar = parseInt(prompt("How long would you like your password to be?"));
-    } else if (passChar > 128) {
-        alert("Password must be less than 128 characters");
+  // Password length prompt with loop to verify proper password length
+  var passChar = parseInt(prompt("How long would you like your password to be?"));   
+  while (passChar < 8 || passChar > 128 || passChar === NaN) {    
+      if (passChar < 8) {
+        alert("Password must be least 8 characters long");
         passChar = parseInt(prompt("How long would you like your password to be?"));
-    } 
-    else if (passChar === NaN) {
-      alert("Please enter a password length")
-      passChar = parseInt(prompt("How long would you like your password to be?"));
-    } 
-}
+      }   else if (passChar > 128) {
+            alert("Password must be less than 128 characters");
+            passChar = parseInt(prompt("How long would you like your password to be?"));
+      }   else if (passChar === NaN) {
+            alert("Please enter a password length")
+            passChar = parseInt(prompt("How long would you like your password to be?"));
+      } 
+  }
 
-  
-if (passChar > 8 && passChar < 128) {
-  alert("Confirm password length of " + passChar) 
-}
+  // Password correct length, confirm password length
+  if (passChar > 8 && passChar < 128) {
+    confirm("Confirm password length of " + passChar)
+  }
 
-  // Password too short or long
- 
-    
 
-    // Allow variables
-    var allowSpecial = confirm("Allow special characters?");
-    var allowUpper = confirm("Allow uppercase letters?");
-    var allowLower = confirm("Allow lowercase letters?");
-    var allowNum = confirm("Allow numbers in your password?");
+  // Allow variables
+  var allowSpecial = confirm("Allow special characters?");
+  var allowUpper = confirm("Allow uppercase letters?");
+  var allowLower = confirm("Allow lowercase letters?");
+  var allowNum = confirm("Allow numbers in your password?");
   
   
 
@@ -89,11 +85,7 @@ if (passChar > 8 && passChar < 128) {
       var random = choice[Math.floor(Math.random() * choice.length)];
       password += random;
       password === choice;
-  }
-  // 
-  // function newPass() {
-  //   let password = choices[Math.floor(Math.random() * choices.length)];
-  // }    
+  }   
       
   
       return password;
