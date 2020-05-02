@@ -16,35 +16,30 @@ function generatePassword (){
   
 
   // Password length prompt with loop to verify proper password length
-  var passChar = parseInt(prompt("How long would you like your password to be?"));   
-  while (passChar < 8 || passChar > 128 || passChar === NaN) {    
+  
+  function pass(){
+  var passChar = parseInt(prompt("How long would you like your password to be?"));  
+  }
+   
+  while (passChar < 8 || passChar > 128 || passChar === false || isNaN(passChar)) {    
       if (passChar < 8) {
         alert("Password must be least 8 characters long");
         passChar = parseInt(prompt("How long would you like your password to be?"));
       }   else if (passChar > 128) {
             alert("Password must be less than 128 characters");
             passChar = parseInt(prompt("How long would you like your password to be?"));
-      }   //else if (passChar === NaN) {
-           // alert("Please enter a password length")
-           // passChar = parseInt(prompt("How long would you like your password to be?"));
-      //} 
-  }
-
-  // User doesn't enter a number, reprompt
-  if (isNaN(passChar)) {
-    alert("Please enter a password length")
-    passChar = parseInt(prompt("How long would you like your password to be?"));
-  }
-
-  // User enters nothing, reprompt
-  if (passChar === false) {
-    alert("Please enter a password length")
-    passChar = parseInt(prompt("How long would you like your password to be?"));
+      }   else if (isNaN(passChar)) {
+            alert("Please enter a password length")
+            passChar = parseInt(prompt("How long would you like your password to be?"));
+      }   else if (passChar === false) {
+            alert("Please enter a password length")
+            passChar = parseInt(prompt("How long would you like your password to be?"));
+      }
   }
 
   // Password correct length, confirm password length
   if (passChar > 8 && passChar < 128) {
-    confirm("Confirm password length of " + passChar);
+    alert("Confirm password length of " + passChar);
    }
 
 
@@ -101,7 +96,8 @@ function generatePassword (){
       password += random;
       password === choice;
   }   
-      
+  
+  
   
       return password;
 
