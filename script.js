@@ -24,16 +24,28 @@ function generatePassword (){
       }   else if (passChar > 128) {
             alert("Password must be less than 128 characters");
             passChar = parseInt(prompt("How long would you like your password to be?"));
-      }   else if (passChar === NaN) {
-            alert("Please enter a password length")
-            passChar = parseInt(prompt("How long would you like your password to be?"));
-      } 
+      }   //else if (passChar === NaN) {
+           // alert("Please enter a password length")
+           // passChar = parseInt(prompt("How long would you like your password to be?"));
+      //} 
+  }
+
+  // User doesn't enter a number, reprompt
+  if (isNaN(passChar)) {
+    alert("Please enter a password length")
+    passChar = parseInt(prompt("How long would you like your password to be?"));
+  }
+
+  // User enters nothing, reprompt
+  if (passChar === false) {
+    alert("Please enter a password length")
+    passChar = parseInt(prompt("How long would you like your password to be?"));
   }
 
   // Password correct length, confirm password length
   if (passChar > 8 && passChar < 128) {
-    confirm("Confirm password length of " + passChar)
-  }
+    confirm("Confirm password length of " + passChar);
+   }
 
 
   // Allow variables
