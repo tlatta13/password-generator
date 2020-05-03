@@ -14,13 +14,10 @@ function generatePassword (){
   
   var generateBtn = document.querySelector("#generate");
   
-
   // Password length prompt with loop to verify proper password length
-  
-  function pass(){
   var passChar = parseInt(prompt("How long would you like your password to be?"));  
-  }
    
+  // Loop to confirm password input is correct length and a number
   while (passChar < 8 || passChar > 128 || passChar === false || isNaN(passChar)) {    
       if (passChar < 8) {
         alert("Password must be least 8 characters long");
@@ -42,15 +39,20 @@ function generatePassword (){
     alert("Confirm password length of " + passChar);
    }
 
-
   // Allow variables
   var allowSpecial = confirm("Allow special characters?");
   var allowUpper = confirm("Allow uppercase letters?");
   var allowLower = confirm("Allow lowercase letters?");
   var allowNum = confirm("Allow numbers in your password?");
-  
-  
 
+  // User doesn't select any character inputs, reconfirm
+  while (allowSpecial === false && allowUpper === false && allowLower === false && allowNum === false) {
+    alert("Please select at least 1 character input.")
+    allowSpecial = confirm("Allow special characters?");;
+    allowUpper = confirm("Allow uppercase letters?");
+    allowLower = confirm("Allow lowercase letters?");
+    allowNum = confirm("Allow numbers in your password?");
+  }
 
   // Character Arrays
   var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
@@ -81,12 +83,7 @@ function generatePassword (){
       choices.push (numbers)
   }
 
-  // if (choices[i] = [i] - 1) {
-  //   alert("Please select at least 1 character input.")
-  //   passChar = parseInt(prompt("How long would you like your password to be?"));
-  // }
-
-   // New password array
+  // New password array
   var password = "";
 
   // Loop to generate random password using user input
@@ -95,14 +92,9 @@ function generatePassword (){
       var random = choice[Math.floor(Math.random() * choice.length)];
       password += random;
       password === choice;
-  }   
-  
-  
-  
+  }     
       return password;
-
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
