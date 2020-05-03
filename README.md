@@ -7,3 +7,7 @@
 * Prompted enter password length and select if they wanted special characters, uppercase letters, lowercase letters and numbers. 
 * Created a loop to reprompt the user to enter a password length if the input was less than 8, higher than 128, a non-number or no input. 
 * Connect all js code to run when the generate password button is pushed.
+
+## Site Link
+https://tlatta13.github.io/password-generator/
+[Password Generator](https://tlatta13.github.io/password-generator/)
